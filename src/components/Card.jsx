@@ -2,8 +2,10 @@ import { StarIcon } from "@chakra-ui/icons";
 import { Box, Image, toVarDefinition } from "@chakra-ui/react";
 
 export default function Card({ item }) {
-  const { rate, count } = item.rating;
-  const { id, title, price, desciption, category, image } = item;
+  const { nameOrigin, urlOrigin } = item.origin;
+  const { nameLocation, urlLocation } = item.location;
+  const episodios = item.episode;
+  const { id, name, status, species, type, gender, image, url, created } = item;
 
   return (
     <Box
@@ -15,7 +17,7 @@ export default function Card({ item }) {
       borderRadius="lg"
       overflow="hidden"
     >
-      <Image borderRadius="lg" objectFit="cover" src={image} alt={desciption} />
+      <Image borderRadius="lg" objectFit="cover" src={image} alt={species} />
 
       <Box p="6">
         <Box display="flex" alignItems="baseline">
@@ -27,7 +29,7 @@ export default function Card({ item }) {
             textTransform="uppercase"
             ml="2"
           >
-            {category}
+            {gender}
           </Box>
         </Box>
 
@@ -38,23 +40,12 @@ export default function Card({ item }) {
           lineHeight="tight"
           noOfLines={1}
         >
-          {title}
+          {name}
         </Box>
 
         <Box>
-          {`$ ${price}`}
+          {`$ ${status}`}
           <Box as="span" color="gray.600" fontSize="sm"></Box>
-        </Box>
-
-        <Box display="flex" mt="2" alignItems="center">
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <StarIcon key={i} color={i < rate ? "teal.500" : "gray.300"} />
-            ))}
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {desciption}
-          </Box>
         </Box>
       </Box>
     </Box>
