@@ -34,3 +34,4 @@ const Pagination = ({ prev, next, onPrevius, onNext }) => {
 };
 
 export default Pagination;
+
