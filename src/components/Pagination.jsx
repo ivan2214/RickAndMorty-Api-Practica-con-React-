@@ -15,14 +15,14 @@ const Pagination = ({ prev, next, onPrevius, onNext }) => {
         <UnorderedList display="flex" gap="4">
           <ListItem listStyleType="none">
             {prev ? (
-              <Button onClick={handlePrevius} colorScheme="blue">
+              <Button onClick={handlePrevius} colorScheme="blue" bg="blue.900" _hover={{bg:"blue.600"}}>
                 Anterior
               </Button>
             ) : null}
           </ListItem>
           <ListItem listStyleType="none">
             {next ? (
-              <Button onClick={handleNext} colorScheme="blue">
+              <Button onClick={handleNext} colorScheme="blue" bg="blue.900" _hover={{bg:"blue.600"}}>
                 Siguiente
               </Button>
             ) : null}

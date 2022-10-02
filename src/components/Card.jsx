@@ -1,5 +1,5 @@
 import { StarIcon } from "@chakra-ui/icons";
-import { Box, Image, toVarDefinition } from "@chakra-ui/react";
+import { Badge, Box, Image, Text, toVarDefinition } from "@chakra-ui/react";
 
 export default function Card({ item }) {
   const { nameOrigin, urlOrigin } = item.origin;
@@ -19,34 +19,43 @@ export default function Card({ item }) {
     >
       <Image borderRadius="lg" objectFit="cover" src={image} alt={species} />
 
-      <Box p="6">
-        <Box display="flex" alignItems="baseline">
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
-          >
-            {gender}
-          </Box>
-        </Box>
-
-        <Box
-          mt="1"
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        p="6"
+        flexDirection="column"
+      
+      >
+        <Text
           fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={1}
+          letterSpacing="wide"
+          fontSize="xs"
+          textTransform="uppercase"
+          color="whiteAlpha.900"
+        >
+          {gender}
+        </Text>
+
+        <Text
+          fontWeight="semibold"
+          letterSpacing="wide"
+          fontSize="xs"
+          textTransform="uppercase"
+          color="whiteAlpha.900"
         >
           {name}
-        </Box>
+        </Text>
 
-        <Box>
-          {`$ ${status}`}
-          <Box as="span" color="gray.600" fontSize="sm"></Box>
-        </Box>
+        {status ? (
+          <Badge variant="solid" colorScheme="green">
+            Success
+          </Badge>
+        ) : (
+          <Badge variant="solid" colorScheme="red">
+            died
+          </Badge>
+        )}
       </Box>
     </Box>
   );

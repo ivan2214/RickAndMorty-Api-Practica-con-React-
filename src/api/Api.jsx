@@ -5,7 +5,6 @@ import Pagination from "../components/Pagination";
 
 const Api = () => {
   const URL = "https://rickandmortyapi.com/api/character";
-
   const [todo, setTodos] = useState([]);
   const [info, setInfo] = useState({});
 
@@ -39,8 +38,14 @@ const Api = () => {
       justifyContent={"center"}
       alignItems="center"
       gap="10"
+      py="5"
     >
-      <Pagination onPrevius={onPrevius} onNext={onNext} prev={info.prev} next={info.next} />
+      <Pagination
+        onPrevius={onPrevius}
+        onNext={onNext}
+        prev={info.prev}
+        next={info.next}
+      />
       <Box
         width="100%"
         display="flex"
@@ -52,7 +57,12 @@ const Api = () => {
           <Card item={item} />
         ))}
       </Box>
-      <Pagination onPrevius={onPrevius} onNext={onNext} prev={info.prev} next={info.next} />
+      <Pagination
+        onPrevius={onPrevius}
+        onNext={onNext}
+        prev={info.prev}
+        next={info.next}
+      />
     </Box>
   );
 };

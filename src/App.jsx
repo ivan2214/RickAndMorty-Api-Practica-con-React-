@@ -5,7 +5,7 @@ import { Nav } from "./components/Nav";
 
 function App() {
   return (
-    <Box display="flex" widt="90%" my="10"  minH="100vh">
+    <Box bg="gray.900" display="flex" width="}100%" py="10" minH="100vh">
       <Api />
     </Box>
   );
